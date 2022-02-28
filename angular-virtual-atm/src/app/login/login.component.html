@@ -1,0 +1,24 @@
+
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="30">
+
+        <div  class="main-div">
+            <mat-card>
+                <mat-toolbar color="primary">Insert Card</mat-toolbar>
+                <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"                  (ngSubmit)="loginProcess()">
+                    <mat-form-field>
+                        <!-- <mat-label>Favorite food</mat-label> -->
+                        <input matInput type="number" placeholder="Card Number" formControlName="card_number">
+                    </mat-form-field>
+                
+                    <mat-form-field>
+                        <!-- <mat-label>Favorite food</mat-label> -->
+                        <input matInput type="password" placeholder="Pin Code" formControlName="pin_code">
+                    </mat-form-field>
+
+                    <button mat-raised-button matTooltip="Click to Insert card." matTooltipPosition="after" type="submit" color="accent">Login</button>
+                </form>      
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

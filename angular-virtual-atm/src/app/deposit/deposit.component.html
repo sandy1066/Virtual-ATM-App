@@ -1,0 +1,36 @@
+
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="30">
+
+        <div  class="main-div" [hidden]="submitted">
+            <mat-card>
+                <mat-toolbar color="primary">Deposit</mat-toolbar>
+                <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"                  (ngSubmit)="depositProcess()">
+                    <mat-form-field>
+                        <input matInput type="number" placeholder="Enter Amount to Deposit" formControlName="balance">
+                    </mat-form-field>
+
+                    <button mat-raised-button matTooltip="Click to deposit money." matTooltipPosition="after" type="submit" color="accent">Deposit</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to return to welcome page." matTooltipPosition="after" routerLink="/welcome">Back</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+                </form>          
+            </mat-card>
+        </div>
+
+        <div [hidden]="!submitted">
+            <mat-card>
+                <mat-toolbar color="primary">Status</mat-toolbar>
+                <div><span>Status : </span>{{message}}</div>
+                <div><span>New Balance : </span>{{balance}}</div>
+                <br>
+                <button mat-raised-button matTooltip="Click to return to welcome page." matTooltipPosition="after" routerLink="/welcome" color="accent">Back</button>
+                <br>
+                <br>
+                <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

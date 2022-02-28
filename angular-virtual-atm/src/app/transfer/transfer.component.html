@@ -1,0 +1,45 @@
+
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="30">
+
+        <div  class="main-div" [hidden]="submitted">
+            <mat-card>
+                <mat-toolbar color="primary">Transfer Money</mat-toolbar>
+                <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"                  (ngSubmit)="transferProcess()">
+                    <mat-form-field>
+                        <input matInput type="number" placeholder="Enter Account Number" formControlName="account_number">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter IFSC Code" formControlName="ifsc_code">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter Name" formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="number" placeholder="Enter Amount to Transfer" formControlName="amount_to_transfer">
+                    </mat-form-field>
+
+                    <button mat-raised-button matTooltip="Click to transfer the money." matTooltipPosition="after" type="submit" color="accent">Transfer</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to return to welcome page." matTooltipPosition="after" routerLink="/welcome">Back</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+                </form>          
+            </mat-card>
+        </div>
+
+        <div [hidden]="!submitted">
+            <mat-card>
+                <mat-toolbar color="primary">Status</mat-toolbar>
+                <div><span>Status : </span>{{message}}</div>
+                <div><span>New Balance : </span>{{balance}}</div>
+                <br>
+                <button mat-raised-button matTooltip="Click to return to welcome page." matTooltipPosition="after" routerLink="/welcome" color="accent">Back</button>
+                <br>
+                <br>
+                <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

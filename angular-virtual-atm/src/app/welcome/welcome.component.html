@@ -1,0 +1,47 @@
+
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="30">
+
+        <div  class="main-div" [hidden]="isadmin">
+            <mat-card>
+                <mat-toolbar color="primary">Welcome!</mat-toolbar>
+                <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+                    <button mat-raised-button matTooltip="Click to get your current balance." matTooltipPosition="after" color="accent" routerLink="/balance">Balance</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to Withdraw balance." matTooltipPosition="after" routerLink="/withdrawal">Withdrawal</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to Transfer money." matTooltipPosition="after" routerLink="/transfer" color="accent">Transfer</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to deposit money to your account." matTooltipPosition="after" routerLink="/deposit">Deposit</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to change your pin number." matTooltipPosition="after" routerLink="/changePin"  color="accent">Change Pin</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+                </form>          
+            </mat-card>
+        </div>
+            
+        <div class="main-div" [hidden]="!isadmin">
+            <mat-card>
+                <mat-toolbar color="primary">Welcome!</mat-toolbar>
+                <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+                    <button mat-raised-button matTooltip="Click to get your current balance." matTooltipPosition="after" color="accent" routerLink="/balance">Balance</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to Withdraw balance." matTooltipPosition="after" routerLink="/withdrawal">Withdrawal</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to Transfer money." matTooltipPosition="after" routerLink="/transfer" color="accent">Transfer</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to deposit money to your account." matTooltipPosition="after" routerLink="/deposit">Deposit</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to change your pin number." matTooltipPosition="after" routerLink="/changePin"  color="accent">Change Pin</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click here to get all accounts data." matTooltipPosition="after" routerLink="/accounts" color="warn">Accounts Data</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+                </form>          
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

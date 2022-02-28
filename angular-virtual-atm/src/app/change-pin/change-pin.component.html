@@ -1,0 +1,41 @@
+
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="30">
+
+        <div  class="main-div" [hidden]="submitted">
+            <mat-card>
+                <mat-toolbar color="primary">Change Pin</mat-toolbar>
+                <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"                  (ngSubmit)="ChangePinProcess()">
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="Enter Pin" formControlName="pin_code">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="Enter New Pin" formControlName="new_pin">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="Re-Enter New Pin" formControlName="re_enter_new_pin">
+                    </mat-form-field>
+
+                    <button mat-raised-button matTooltip="Click to submit the changes." matTooltipPosition="after" type="submit" color="accent">Change</button>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to return to welcome page." matTooltipPosition="after" routerLink="/welcome">Back</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+                </form>          
+            </mat-card>
+        </div>
+
+        <div [hidden]="!submitted">
+            <mat-card>
+                <mat-toolbar color="primary">Status</mat-toolbar>
+                <div><span>Status : </span>{{message}}</div>
+                <br>
+                <button mat-raised-button matTooltip="Click to return to welcome page." matTooltipPosition="after" routerLink="/welcome" color="accent">Back</button>
+                <br>
+                <br>
+                <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

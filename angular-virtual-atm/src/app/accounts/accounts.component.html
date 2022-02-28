@@ -1,0 +1,42 @@
+<div class="main">
+<div class="container">
+    <h2>List Of Users</h2>
+    <table class="table">
+        <thead>
+            <th>S. No.</th>
+            <th>User's Name</th>
+            <th>Account Number</th>
+            <th>IFSC Code</th>
+            <th>Balance</th>
+            <th>Account Type</th>
+            <th>Admin</th>
+            <th>E mail</th>
+            <th>Phone Number</th>
+            <th>Contact Address</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.account_number}}</td>
+                <td>{{user.ifsc_code}}</td>
+                <td>{{user.balance}}</td>
+                <td>{{user.account_type}}</td>
+                <td>{{user.isadmin}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone_number}}</td>
+                <td>{{user.contact_address}}</td>
+                <!-- <td><a [routerLink]="['/edit',i+1]">Edit</a></td>
+                <td><dx-button (click)="onDelete(i)">X</dx-button></td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn">
+    <br>
+    <button mat-raised-button matTooltip="Click to return to welcome page." matTooltipPosition="after" routerLink="/welcome" color="accent">Back</button>
+    <br>
+    <br>
+    <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+</div>
+</div>

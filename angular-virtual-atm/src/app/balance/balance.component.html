@@ -1,0 +1,19 @@
+
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="30">
+
+        <div  class="main-div">
+            <mat-card>
+                <mat-toolbar color="primary">Balance</mat-toolbar>
+                <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+                    <h1>{{balance}}</h1>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to return to welcome page." matTooltipPosition="after" routerLink="/welcome" color="accent">Back</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button matTooltip="Click to cancel the transaction." matTooltipPosition="after"  color="warn" type="button" (click)="logoutProcess()">Log Out</button>
+                </form>          
+            </mat-card>
+        </div>
+    </mat-card>
+</div>
